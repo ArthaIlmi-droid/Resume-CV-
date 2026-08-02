@@ -1,0 +1,1931 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ArZa Spa — Sentuhan Alami untuk Hidup yang Lebih Baik</title>
+  <style>
+/* Inlined styles.css - Modern Spa Website CSS */
+
+:root {
+  --primary-color: #6b9b5a;
+  --secondary-color: #d4a574;
+  --accent-color: #c9a77f;
+  --dark-color: #2d3436;
+  --light-color: #f5f3f0;
+  --text-color: #333;
+  --border-radius: 20px;
+  --shadow: 0 8px 32px rgba(0,0,0,0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f3f0 0%, #e8ddd6 100%);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  background: linear-gradient(180deg, var(--primary-color) 0%, rgba(107, 155, 90, 0.9) 100%);
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.nav-item {
+  padding: 1rem 1.5rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  border-left: 4px solid transparent;
+  position: relative;
+}
+
+/* ===== SIDEBAR LOGO ===== */
+.sidebar-logo {
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+}
+
+.sidebar-logo-svg {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 0.8rem;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.sidebar-logo-svg:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.sidebar-logo-text {
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0.5rem 0 0;
+  text-transform: uppercase;
+}
+
+.sidebar-logo-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  margin-top: 0.3rem;
+  font-weight: 400;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background: rgba(255, 255, 255, 0.1);
+  border-left-color: var(--secondary-color);
+  padding-left: 2rem;
+}
+
+.nav-submenu {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-item.has-submenu:hover + .nav-submenu,
+.nav-submenu:hover {
+  display: flex;
+}
+
+.nav-submenu .nav-item {
+  padding: 0.7rem 1.5rem 0.7rem 3rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  border-left: none;
+}
+
+.nav-submenu .nav-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  padding-left: 3.5rem;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.main-content {
+  margin-left: 250px;
+  padding: 2rem;
+}
+
+.header {
+  background: white;
+  padding: 2rem 0;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* ===== LOGO & TAGLINE ===== */
+.logo-section {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.logo-arza {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-svg {
+  width: 100px;
+  height: 100px;
+  color: var(--primary-color);
+}
+
+.forest-spa {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tagline h1 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  font-weight: 300;
+  text-align: center;
+  margin: 0;
+}
+/* Make subtitle sit beside the title on wider screens */
+.tagline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.tagline-sub { margin-top: 0; }
+
+/* ===== HEADER ACTIONS ===== */
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.btn-reservation,
+.btn-location {
+  padding: 0.7rem 1.2rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn-reservation:hover,
+.btn-location:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+/* ===== SEARCH BAR ===== */
+.search-bar {
+  display: flex;
+  background: var(--light-color);
+  border-radius: 25px;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  align-items: center;
+  flex: 0 1 300px;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  outline: none;
+  color: var(--text-color);
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.search-btn:hover {
+  background: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+/* ===== PROFILE ICON ===== */
+.profile-icon {
+  position: relative;
+}
+
+.btn-profile {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: var(--transition);
+}
+
+.btn-profile:hover {
+  background: var(--primary-color);
+  transform: scale(1.1);
+}
+
+/* ===== MODAL ===== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  transition: var(--transition);
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  max-width: 500px;
+  width: 90%;
+  box-shadow: var(--shadow);
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #999;
+  transition: var(--transition);
+}
+
+.close-btn:hover {
+  color: var(--text-color);
+}
+
+.modal-content h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+/* ===== FORMS & INPUTS ===== */
+.input-field {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: 2px solid var(--light-color);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(107, 155, 90, 0.1);
+}
+
+.input-field::placeholder {
+  color: #999;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary,
+.btn-secondary,
+.btn-save,
+.btn-edit {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--light-color);
+  color: var(--text-color);
+}
+
+.btn-secondary:hover {
+  background: #ddd;
+}
+
+.btn-save {
+  background: var(--primary-color);
+  color: white;
+}
+
+.btn-save:hover {
+  background: var(--secondary-color);
+}
+
+.btn-edit,
+.btn-edit-inline {
+  background: var(--secondary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-edit:hover,
+.btn-edit-inline:hover {
+  background: var(--primary-color);
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.section h2 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+/* ===== HERO CAROUSEL ===== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  margin-bottom: 2rem;
+  height: 400px;
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  top: 0;
+  left: 0;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(107, 155, 90, 0.4), rgba(212, 165, 116, 0.4));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 2;
+}
+
+.carousel-overlay h2 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  text-align: center;
+  color: white;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Auto-scrolling text animation */
+.carousel-overlay h2.scroll-text {
+  animation: scrollText 8s linear infinite;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Carousel Controls */
+.carousel-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+  align-items: center;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+
+.carousel-dot.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+.carousel-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Carousel Navigation Buttons */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-nav:hover {
+  background: rgba(255, 255, 255, 0.6);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+  left: 15px;
+}
+
+.carousel-next {
+  right: 15px;
+}
+
+/* Slide Counter */
+.slide-counter {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(107, 155, 90, 0.7);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  z-index: 10;
+}
+
+/* ===== WELCOME SECTION ===== */
+.welcome-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.welcome-box {
+  background: linear-gradient(135deg, rgba(107, 155, 90, 0.05), rgba(212, 165, 116, 0.05));
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  border: 2px solid rgba(107, 155, 90, 0.1);
+  transition: var(--transition);
+}
+
+.welcome-box:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 24px rgba(107, 155, 90, 0.15);
+}
+
+.welcome-box h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.welcome-box p {
+  color: var(--text-color);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.editable-content {
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+/* ===== SERVICES GRID ===== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.service-card {
+  background: white;
+  border: 2px solid var(--light-color);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(107, 155, 90, 0.1), rgba(212, 165, 116, 0.1));
+  opacity: 0;
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary-color);
+  box-shadow: 0 16px 40px rgba(107, 155, 90, 0.2);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.service-card h4 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.service-desc {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ===== VISION & MISSION ===== */
+.vision-mission {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, rgba(107, 155, 90, 0.05), rgba(212, 165, 116, 0.05));
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  border: 2px solid rgba(107, 155, 90, 0.1);
+}
+
+.vm-box {
+  padding: 1.5rem;
+}
+
+.vm-box h4 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.vm-box p {
+  color: var(--text-color);
+  line-height: 1.8;
+}
+
+/* ===== FOUNDER INFO ===== */
+.founder-info {
+  background: linear-gradient(135deg, rgba(107, 155, 90, 0.05), rgba(212, 165, 116, 0.05));
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  border: 2px solid rgba(107, 155, 90, 0.1);
+  margin-bottom: 3rem;
+}
+
+.founder-info h3 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.founder-details p {
+  margin: 0.8rem 0;
+  color: var(--text-color);
+  font-size: 1.05rem;
+}
+
+.founder-details strong {
+  color: var(--primary-color);
+}
+
+/* ===== LOCATION & MAPS ===== */
+.location-section {
+  background: linear-gradient(135deg, rgba(107, 155, 90, 0.05), rgba(212, 165, 116, 0.05));
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  border: 2px solid rgba(107, 155, 90, 0.1);
+}
+
+.location-section h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.location-section p {
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.maps-container {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  margin-top: 1.5rem;
+}
+
+/* ===== SERVICE DETAILS ===== */
+.service-details-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.service-detail-card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--light-color);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-detail-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow);
+  transform: translateY(-5px);
+}
+
+.service-detail-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.service-detail-card .price {
+  color: var(--secondary-color);
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.service-detail-card p {
+  color: #666;
+  margin: 0.5rem 0;
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.service-detail-card .btn-primary {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-content {
+  background: linear-gradient(135deg, rgba(107, 155, 90, 0.05), rgba(212, 165, 116, 0.05));
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  border: 2px solid rgba(107, 155, 90, 0.1);
+}
+
+.about-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+/* ===== CONTACT FORM ===== */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(107, 155, 90, 0.05), rgba(212, 165, 116, 0.05));
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  border: 2px solid rgba(107, 155, 90, 0.1);
+}
+
+.contact-form button {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.message {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.message.success {
+  background: rgba(107, 155, 90, 0.1);
+  color: var(--primary-color);
+}
+
+.message.error {
+  background: rgba(255, 0, 0, 0.1);
+  color: red;
+}
+
+/* ===== GALLERY SECTION ===== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.8);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(107, 155, 90, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  opacity: 0;
+  transition: var(--transition);
+  z-index: 5;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-overlay h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.gallery-overlay p {
+  font-size: 0.9rem;
+  text-align: center;
+  max-width: 90%;
+}
+
+/* Gallery modal/lightbox */
+.gallery-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  padding: 1rem;
+}
+
+.gallery-modal.hidden {
+  display: none;
+}
+
+.gallery-modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  animation: slideUp 0.3s ease;
+}
+
+.gallery-modal-image {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.gallery-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.gallery-close-btn:hover {
+  background: rgba(0,0,0,0.9);
+}
+
+.gallery-view-more {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.gallery-view-more a {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: var(--transition);
+  font-weight: 600;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .main-content {
+    margin-left: 200px;
+    padding: 1rem;
+  }
+
+  .header-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .welcome-section,
+  .vision-mission {
+    grid-template-columns: 1fr;
+  }
+
+  .header-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .search-bar {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .carousel-overlay h2 {
+    font-size: 2.2rem;
+  }
+
+  .carousel-nav {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+
+  .carousel-prev {
+    left: 10px;
+  }
+
+  .carousel-next {
+    right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    position: static;
+    box-shadow: none;
+    border-bottom: 1px solid var(--light-color);
+    padding: 1rem;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    gap: 0;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .nav-item {
+    padding: 0.7rem 1rem;
+    white-space: nowrap;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .header-content {
+    grid-template-columns: 1fr;
+  }
+
+  .tagline h1 {
+    font-size: 1.3rem;
+  }
+
+  .carousel-overlay h2 {
+    font-size: 1.8rem;
+  }
+
+  .carousel-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .slide-counter {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .section {
+    padding: 1rem;
+  }
+
+  .welcome-section,
+  .vision-mission {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .logo-svg {
+    width: 70px;
+    height: 70px;
+  }
+
+  .search-bar {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-section {
+    flex-direction: column;
+  }
+
+  .header-actions {
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .btn-reservation,
+  .btn-location {
+    width: 100%;
+  }
+
+  .profile-icon {
+    width: 100%;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel-overlay h2 {
+    font-size: 1.3rem;
+  }
+
+  .carousel-nav {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  .carousel-prev {
+    left: 5px;
+  }
+
+  .carousel-next {
+    right: 5px;
+  }
+
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .slide-counter {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    top: 8px;
+    right: 8px;
+  }
+
+  .carousel-controls {
+    bottom: 15px;
+    gap: 6px;
+  }
+
+  /* On small screens, stack the subtitle under the title */
+  .tagline { flex-direction: column; }
+  .tagline-sub { margin-top: 6px; text-align: center; }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .gallery-item {
+    aspect-ratio: 1 / 1;
+  }
+
+  .gallery-overlay h3 {
+    font-size: 1rem;
+  }
+
+  .gallery-overlay p {
+    font-size: 0.8rem;
+  }
+
+  .gallery-modal-content {
+    max-width: 95%;
+  }
+
+  .gallery-modal-image {
+    max-height: 70vh;
+  }
+}
+
+</style>
+  <style>
+/* Enhanced hero title styling (additive) */
+.hero-title-stunning {
+  display: inline-block;
+  font-family: 'Segoe UI', Tahoma, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 3.2rem;
+  font-weight: 900;
+  background: linear-gradient(90deg,#ffd27a,#ff9db8,#6b9b5a);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 6px 30px rgba(107,155,90,0.18), 0 2px 6px rgba(0,0,0,0.06);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  position: relative;
+  transform: translateZ(0);
+  transition: transform .3s ease, filter .25s ease;
+  letter-spacing: 1px;
+}
+.hero-title-stunning:hover { transform: translateY(-6px) rotate(-1deg) scale(1.02); filter: drop-shadow(0 10px 20px rgba(107,155,90,0.12)); }
+.hero-title-stunning::before{ content: ''; position: absolute; left: -10px; top: -10px; width: 14px; height: 14px; background: radial-gradient(circle at 30% 30%, #fff, rgba(255,255,255,0)); filter: blur(4px); opacity: .9; border-radius:50%; }
+.hero-title-stunning::after{ content:'✨'; position:absolute; right:-28px; top:-18px; font-size:1.2rem; animation: sparkle 2.8s infinite; }
+@keyframes sparkle { 0%{transform:scale(.9) rotate(0)}50%{transform:scale(1.2) rotate(12deg)}100%{transform:scale(.9) rotate(0)} }
+  </style>
+</head>
+<body>
+  <!-- Sidebar Toolbar -->
+  <aside class="sidebar">
+    <!-- Sidebar Logo -->
+    <div class="sidebar-logo">
+      <svg viewBox="0 0 200 200" class="sidebar-logo-svg">
+        <!-- Forest leaves background -->
+        <defs>
+          <radialGradient id="leafGradient" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#a8d5ba;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#6b9b5a;stop-opacity:1" />
+          </radialGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        
+        <!-- Circle background -->
+        <circle cx="100" cy="100" r="95" fill="url(#leafGradient)" opacity="0.9"/>
+        <circle cx="100" cy="100" r="90" fill="none" stroke="white" stroke-width="2" opacity="0.3"/>
+        
+        <!-- Forest leaves - Left leaves -->
+        <path d="M 70 80 Q 60 70 50 75 Q 55 85 65 90 Z" fill="white" opacity="0.8"/>
+        <path d="M 75 60 Q 65 50 55 55 Q 60 68 70 75 Z" fill="white" opacity="0.7"/>
+        <path d="M 80 40 Q 70 30 60 35 Q 65 48 75 55 Z" fill="white" opacity="0.6"/>
+        
+        <!-- Forest leaves - Right leaves -->
+        <path d="M 130 80 Q 140 70 150 75 Q 145 85 135 90 Z" fill="white" opacity="0.8"/>
+        <path d="M 125 60 Q 135 50 145 55 Q 140 68 130 75 Z" fill="white" opacity="0.7"/>
+        <path d="M 120 40 Q 130 30 140 35 Q 135 48 125 55 Z" fill="white" opacity="0.6"/>
+        
+        <!-- Center leaf -->
+        <path d="M 100 70 Q 90 60 80 65 Q 85 80 100 90 Q 115 80 120 65 Q 110 60 100 70 Z" fill="white" opacity="0.9" filter="url(#glow)"/>
+        
+        <!-- Water droplet at bottom -->
+        <circle cx="100" cy="130" r="8" fill="white" opacity="0.7"/>
+        <circle cx="100" cy="125" r="4" fill="white" opacity="0.4"/>
+        
+        <!-- Center circle -->
+        <circle cx="100" cy="100" r="25" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+      </svg>
+      <div class="sidebar-logo-text">ArZa Spa</div>
+      <div class="sidebar-logo-subtitle">Forest Wellness</div>
+    </div>
+
+    <div class="sidebar-nav">
+      <a href="#home" class="nav-item active" data-scroll="home">Home</a>
+      <a href="#services" class="nav-item" data-scroll="services">Services</a>
+      <a href="#layanan-kami" class="nav-item has-submenu" data-scroll="layanan-kami">Layanan Kami ▼</a>
+      <div class="nav-submenu">
+        <a href="#" class="nav-item" data-service="massage">💆 Pijat/Massage</a>
+        <a href="#" class="nav-item" data-service="body-treatment">🧖 Body Treatment</a>
+        <a href="#" class="nav-item" data-service="facial">✨ Facial</a>
+        <a href="#" class="nav-item" data-service="steam">🌬️ Terapi Uap/Sauna</a>
+        <a href="#" class="nav-item" data-service="manicure-pedicure">💅 Manicure & Pedicure</a>
+        <a href="#" class="nav-item" data-service="relaxation-package">🌿 Paket Relaksasi</a>
+        <a href="#" class="nav-item" data-service="special-treatment">👑 Special Treatment</a>
+      </div>
+      <a href="#gallery" class="nav-item" data-scroll="gallery">Gallery</a>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="contact.html" class="nav-item">Contact</a>
+    </div>
+  </aside>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <!-- Logo & Tagline -->
+      <div class="logo-section">
+        <div class="logo-arza">
+          <svg viewBox="0 0 200 200" class="logo-svg">
+            <!-- Lingkaran besar -->
+            <circle cx="100" cy="100" r="95" fill="none" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+            <!-- Lingkaran kecil -->
+            <circle cx="100" cy="100" r="85" fill="none" stroke="currentColor" stroke-width="1" opacity="0.2"/>
+            <!-- Huruf A di atas -->
+            <text x="50" y="60" font-size="40" font-weight="bold" text-anchor="middle" fill="currentColor">A</text>
+            <!-- Huruf Z di kanan -->
+            <text x="150" y="100" font-size="40" font-weight="bold" text-anchor="middle" fill="currentColor">Z</text>
+            <!-- Huruf R di tengah -->
+            <text x="100" y="110" font-size="40" font-weight="bold" text-anchor="middle" fill="currentColor">R</text>
+            <!-- Double A di luar -->
+            <text x="70" y="145" font-size="35" font-weight="bold" text-anchor="middle" fill="currentColor">A</text>
+            <text x="130" y="145" font-size="35" font-weight="bold" text-anchor="middle" fill="currentColor">A</text>
+          </svg>
+          <div class="logo-text">
+            <p class="forest-spa">forest spa</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reservation & Search -->
+      <div class="header-actions">
+        <button class="btn-reservation" id="reservationBtn">ONLINE RESERVATION</button>
+        <button class="btn-location" id="locationBtn">OUR LOCATION</button>
+        
+        <!-- Search Bar -->
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Cari layanan, produk..." class="search-input">
+          <button id="searchBtn" class="search-btn">🔍</button>
+        </div>
+
+        <!-- Profile Icon -->
+        <div class="profile-icon">
+          <button id="profileBtn" class="btn-profile">👤</button>
+          <div id="profileModal" class="modal hidden">
+            <div class="modal-content">
+              <span class="close-btn">&times;</span>
+              <h3>Profil Pengguna</h3>
+              <input type="text" id="userName" placeholder="Nama Anda" class="input-field">
+              <input type="email" id="userEmail" placeholder="Email Anda" class="input-field">
+              <input type="tel" id="userPhone" placeholder="Nomor HP" class="input-field">
+              <button id="saveProfile" class="btn-save">Simpan Profil</button>
+              <p id="profileMessage" class="message"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <!-- HOME Section -->
+    <section id="home" class="section">
+      <div class="hero">
+        <!-- Carousel Container -->
+        <div class="carousel-container">
+          <!-- Slide 1 -->
+          <div class="carousel-slide active">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23d4a574;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a87d5e;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='400' fill='url(%23grad1)'/%3E%3Ccircle cx='150' cy='100' r='80' fill='%23e8d5c4' opacity='0.3'/%3E%3Ccircle cx='700' cy='350' r='100' fill='%236b9b5a' opacity='0.2'/%3E%3Ctext x='400' y='200' font-size='48' font-weight='bold' text-anchor='middle' fill='white' opacity='0.7'%3ESpa Relaxation%3C/text%3E%3C/svg%3E" alt="Spa Relaxation">
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Cdefs%3E%3ClinearGradient id='grad2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%236b9b5a;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%238fbc8f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='400' fill='url(%23grad2)'/%3E%3Ccircle cx='100' cy='150' r='100' fill='%23d4a574' opacity='0.2'/%3E%3Ccircle cx='700' cy='250' r='80' fill='%23f5f3f0' opacity='0.15'/%3E%3Ctext x='400' y='200' font-size='48' font-weight='bold' text-anchor='middle' fill='white' opacity='0.7'%3EMassage Premium%3C/text%3E%3C/svg%3E" alt="Massage Premium">
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-slide">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Cdefs%3E%3ClinearGradient id='grad3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23c9a77f;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23d4a574;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='400' fill='url(%23grad3)'/%3E%3Ccircle cx='650' cy='80' r='90' fill='%236b9b5a' opacity='0.2'/%3E%3Ccircle cx='150' cy='300' r='110' fill='%23f5f3f0' opacity='0.12'/%3E%3Ctext x='400' y='200' font-size='48' font-weight='bold' text-anchor='middle' fill='white' opacity='0.7'%3EFacial Eksklusif%3C/text%3E%3C/svg%3E" alt="Facial Eksklusif">
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="carousel-slide">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Cdefs%3E%3ClinearGradient id='grad4' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23a8d5ba;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%236b9b5a;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='400' fill='url(%23grad4)'/%3E%3Ccircle cx='200' cy='120' r='70' fill='%23d4a574' opacity='0.25'/%3E%3Ccircle cx='600' cy='280' r='95' fill='%23f5f3f0' opacity='0.1'/%3E%3Ctext x='400' y='200' font-size='48' font-weight='bold' text-anchor='middle' fill='white' opacity='0.7'%3EBody Treatment%3C/text%3E%3C/svg%3E" alt="Body Treatment">
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="carousel-slide">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Cdefs%3E%3ClinearGradient id='grad5' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ffd27a;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23d4a574;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='400' fill='url(%23grad5)'/%3E%3Ccircle cx='100' cy='80' r='75' fill='%236b9b5a' opacity='0.2'/%3E%3Ccircle cx='700' cy='320' r='100' fill='%236b9b5a' opacity='0.15'/%3E%3Ctext x='400' y='200' font-size='48' font-weight='bold' text-anchor='middle' fill='white' opacity='0.7'%3ESentuhan Alami%3C/text%3E%3C/svg%3E" alt="Sentuhan Alami">
+          </div>
+        </div>
+
+        <!-- Overlay -->
+        <div class="carousel-overlay">
+          <h2 id="carouselTitle" class="scroll-text">Rasakan sensasi terbaik bersama ArZa Spa</h2>
+        </div>
+
+        <!-- Slide Counter -->
+        <div class="slide-counter">
+          <span id="currentSlide">1</span> / <span id="totalSlides">5</span>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="carousel-nav carousel-prev" id="prevBtn">❮</button>
+        <button class="carousel-nav carousel-next" id="nextBtn">❯</button>
+
+        <!-- Dot Indicators -->
+        <div class="carousel-controls">
+          <div class="carousel-dot active" data-slide="0"></div>
+          <div class="carousel-dot" data-slide="1"></div>
+          <div class="carousel-dot" data-slide="2"></div>
+          <div class="carousel-dot" data-slide="3"></div>
+          <div class="carousel-dot" data-slide="4"></div>
+        </div>
+      </div>
+
+      <!-- Editable Welcome Sections -->
+      <div class="welcome-section">
+        <div class="welcome-box">
+          <h3>Selamat Datang</h3>
+          <p id="welcomeText1" class="editable-content">Nikmati pengalaman spa terbaik dengan produk alami pilihan. Kami menawarkan perawatan yang disesuaikan dengan kebutuhan kulit Anda.</p>
+          <button class="btn-edit" onclick="editContent('welcomeText1')">Edit</button>
+        </div>
+        <div class="welcome-box">
+          <h3>Keunggulan Kami</h3>
+          <p id="welcomeText2" class="editable-content">Terapis profesional, lingkungan nyaman, dan bahan-bahan organik terbaik untuk kesehatan dan kecantikan Anda.</p>
+          <button class="btn-edit" onclick="editContent('welcomeText2')">Edit</button>
+        </div>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="services-grid">
+        <div class="service-card" data-service="massage">
+          <div class="service-icon">💆</div>
+          <h4>Pijat/Massage</h4>
+          <p class="service-desc">Relaksasi otot yang mendalam dengan teknik profesional</p>
+          <p style="color: var(--secondary-color); font-weight: bold; margin: 0.5rem 0;">Rp 150.000</p>
+        </div>
+        <div class="service-card" data-service="body-treatment">
+          <div class="service-icon">🧖</div>
+          <h4>Body Treatment</h4>
+          <p class="service-desc">Perawatan tubuh menyeluruh dengan produk alami premium</p>
+          <p style="color: var(--secondary-color); font-weight: bold; margin: 0.5rem 0;">Rp 200.000</p>
+        </div>
+        <div class="service-card" data-service="facial">
+          <div class="service-icon">✨</div>
+          <h4>Facial</h4>
+          <p class="service-desc">Perawatan wajah premium untuk kulit yang cerah dan sehat</p>
+          <p style="color: var(--secondary-color); font-weight: bold; margin: 0.5rem 0;">Rp 180.000</p>
+        </div>
+        <div class="service-card" data-service="steam">
+          <div class="service-icon">💨</div>
+          <h4>Terapi Uap/Sauna</h4>
+          <p class="service-desc">Terapi uap untuk detox dan relaksasi total</p>
+          <p style="color: var(--secondary-color); font-weight: bold; margin: 0.5rem 0;">Rp 100.000</p>
+        </div>
+        <div class="service-card" data-service="manicure-pedicure">
+          <div class="service-icon">💅</div>
+          <h4>Manicure & Pedicure</h4>
+          <p class="service-desc">Perawatan kuku profesional dengan finishing sempurna</p>
+          <p style="color: var(--secondary-color); font-weight: bold; margin: 0.5rem 0;">Rp 120.000</p>
+        </div>
+        <div class="service-card" data-service="relaxation-package">
+          <div class="service-icon">🌿</div>
+          <h4>Paket Relaksasi</h4>
+          <p class="service-desc">Kombinasi semua layanan dengan harga spesial</p>
+          <p style="color: var(--secondary-color); font-weight: bold; margin: 0.5rem 0;">Rp 450.000</p>
+        </div>
+        <div class="service-card" data-service="special-treatment">
+          <div class="service-icon">👑</div>
+          <h4>Special Treatment</h4>
+          <p class="service-desc">Perawatan eksklusif & premium dengan layanan customized</p>
+          <p style="color: var(--secondary-color); font-weight: bold; margin: 0.5rem 0;">Rp 300.000</p>
+        </div>
+      </div>
+
+      <!-- Vision & Mission -->
+      <div class="vision-mission">
+        <div class="vm-box">
+          <h4>Visi</h4>
+          <p id="visionText" class="editable-content">Menjadi spa terkemuka yang menghadirkan relaksasi berkualitas dengan sentuhan alami untuk kesejahteraan pelanggan.</p>
+          <button class="btn-edit" onclick="editContent('visionText')">Edit</button>
+        </div>
+        <div class="vm-box">
+          <h4>Misi</h4>
+          <p id="missionText" class="editable-content">Memberikan layanan spa terbaik dengan bahan alami, terapis profesional, dan lingkungan yang nyaman untuk setiap pelanggan.</p>
+          <button class="btn-edit" onclick="editContent('missionText')">Edit</button>
+        </div>
+      </div>
+
+      <!-- Founder Info -->
+      <div class="founder-info">
+        <h3>Tentang Pendiri</h3>
+        <div class="founder-details">
+          <p><strong>Nama Pendiri:</strong> <span id="founderName" class="editable-content">Aza Ramadhani</span> <button class="btn-edit-inline" onclick="editContent('founderName')">✎</button></p>
+          <p><strong>Tahun Didirikan:</strong> <span id="foundYear" class="editable-content">2015</span> <button class="btn-edit-inline" onclick="editContent('foundYear')">✎</button></p>
+          <p><strong>Bidang:</strong> <span id="fieldBusiness" class="editable-content">Wellness & Beauty Services</span> <button class="btn-edit-inline" onclick="editContent('fieldBusiness')">✎</button></p>
+        </div>
+      </div>
+
+      <!-- Location & Maps -->
+      <div class="location-section">
+        <h3>Lokasi Kami</h3>
+        <p id="locationText" class="editable-content">Jl. Raya Selatan No. 123, Bandung, Jawa Barat 40123</p>
+        <button class="btn-edit" onclick="editContent('locationText')">Edit</button>
+        
+        <div class="maps-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.0!2d107.60779!3d-6.89456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e7bb6b6b6b6b%3A0x0!2sArZa%20Spa%20Forest%20Wellness%20-%20Bandung!5e0!3m2!1sen!2sid!4v1674567890" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <!-- Location Information Cards -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+          <!-- Hours Section -->
+          <div style="background: linear-gradient(135deg, rgba(107, 155, 90, 0.05), rgba(212, 165, 116, 0.05)); padding: 1.5rem; border-radius: 15px; border: 2px solid rgba(107, 155, 90, 0.1);">
+            <h4 style="color: #6b9b5a; margin-bottom: 1rem; font-size: 1.1rem;">⏰ Jam Operasional</h4>
+            <p style="margin: 0.5rem 0; color: #333;"><strong>Senin - Jumat:</strong> 09:00 - 22:00 WIB</p>
+            <p style="margin: 0.5rem 0; color: #333;"><strong>Sabtu - Minggu:</strong> 08:00 - 23:00 WIB</p>
+            <p style="margin: 1rem 0 0; color: #999; font-size: 0.9rem;">Buka sepanjang tahun, liburan nasional tetap buka</p>
+          </div>
+
+          <!-- Contact Section -->
+          <div style="background: linear-gradient(135deg, rgba(107, 155, 90, 0.05), rgba(212, 165, 116, 0.05)); padding: 1.5rem; border-radius: 15px; border: 2px solid rgba(107, 155, 90, 0.1);">
+            <h4 style="color: #6b9b5a; margin-bottom: 1rem; font-size: 1.1rem;">📞 Hubungi Kami</h4>
+            <p style="margin: 0.5rem 0;"><strong>Telepon:</strong> <a href="tel:022-7234-5678" style="color: #6b9b5a; text-decoration: none;">(022) 7234-5678</a></p>
+            <p style="margin: 0.5rem 0;"><strong>WhatsApp:</strong> <a href="https://wa.me/6281234567890" target="_blank" style="color: #00d084; text-decoration: none;">+62 812-3456-7890</a></p>
+            <p style="margin: 1rem 0 0;"><strong>Email:</strong> <a href="mailto:info@arzaspa.com" style="color: #6b9b5a; text-decoration: none;">info@arzaspa.com</a></p>
+          </div>
+
+          <!-- Facilities Section -->
+          <div style="background: linear-gradient(135deg, rgba(107, 155, 90, 0.05), rgba(212, 165, 116, 0.05)); padding: 1.5rem; border-radius: 15px; border: 2px solid rgba(107, 155, 90, 0.1);">
+            <h4 style="color: #6b9b5a; margin-bottom: 1rem; font-size: 1.1rem;">🏢 Fasilitas</h4>
+            <p style="margin: 0.5rem 0; color: #333;">✅ Parkir Gratis</p>
+            <p style="margin: 0.5rem 0; color: #333;">✅ WiFi Gratis</p>
+            <p style="margin: 0.5rem 0; color: #333;">✅ Ruang Tunggu Nyaman</p>
+            <p style="margin: 0.5rem 0; color: #333;">✅ Kamar Mandi Bersih</p>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem;">
+          <button onclick="openGoogleMaps()" style="background: linear-gradient(135deg, #6b9b5a, #d4a574); color: white; padding: 1rem; border: none; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 1rem; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 24px rgba(107, 155, 90, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">🗺️ Buka di Google Maps</button>
+          <button onclick="openWhatsApp()" style="background: #00d084; color: white; padding: 1rem; border: none; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 1rem; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 24px rgba(0, 208, 132, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">💬 Chat di WhatsApp</button>
+          <button onclick="callPhone()" style="background: #4CAF50; color: white; padding: 1rem; border: none; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 1rem; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 24px rgba(76, 175, 80, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">☎️ Hubungi Kami</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES Section -->
+    <section id="services" class="section">
+      <h2>Layanan Kami</h2>
+      
+      <!-- Service Introduction -->
+      <div style="background: linear-gradient(135deg, rgba(107, 155, 90, 0.08), rgba(212, 165, 116, 0.08)); padding: 1.5rem; border-radius: 15px; margin-bottom: 2rem; border-left: 4px solid var(--primary-color); text-align: center;">
+        <p style="color: #333; font-size: 1.05rem; line-height: 1.8; margin: 0;">
+          Kami menawarkan berbagai layanan spa premium dengan terapis profesional dan bahan-bahan alami pilihan. 
+          Setiap layanan dirancang khusus untuk memberikan relaksasi maksimal dan perawatan berkualitas tinggi.
+        </p>
+      </div>
+      
+      <!-- Services Grid -->
+      <div id="serviceDetailsContainer" class="service-details-container"></div>
+      
+      <!-- Service Categories Info -->
+      <div style="background: linear-gradient(135deg, rgba(107, 155, 90, 0.05), rgba(212, 165, 116, 0.05)); padding: 2rem; border-radius: 15px; margin-top: 2rem; border: 2px solid rgba(107, 155, 90, 0.1);">
+        <h3 style="color: var(--primary-color); margin-bottom: 1rem; text-align: center;">📋 Kategori Layanan</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <div style="text-align: center;">
+            <h4 style="color: #6b9b5a; margin-bottom: 0.5rem;">💆 Relaksasi</h4>
+            <p style="color: #666; font-size: 0.9rem;">Massage, Steam, Body Treatment</p>
+          </div>
+          <div style="text-align: center;">
+            <h4 style="color: #6b9b5a; margin-bottom: 0.5rem;">✨ Kecantikan</h4>
+            <p style="color: #666; font-size: 0.9rem;">Facial, Manicure & Pedicure</p>
+          </div>
+          <div style="text-align: center;">
+            <h4 style="color: #6b9b5a; margin-bottom: 0.5rem;">👑 Premium</h4>
+            <p style="color: #666; font-size: 0.9rem;">Special Treatment, Paket Relaksasi</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT Section -->
+    <section id="about" class="section">
+      <h2>Tentang ArZa Spa</h2>
+      <div class="about-content">
+        <p id="aboutText" class="editable-content">ArZa Spa adalah tempat relaksasi premium yang menggabungkan teknologi modern dengan bahan-bahan alami terbaik. Kami berkomitmen untuk memberikan pengalaman spa yang tak terlupakan bagi setiap pelanggan kami.</p>
+        <button class="btn-edit" onclick="editContent('aboutText')">Edit</button>
+      </div>
+    </section>
+
+    <!-- GALLERY Section -->
+    <section id="gallery" class="section">
+      <h2>Galeri Kami</h2>
+      
+        
+        <!-- Image Upload Form for Gallery -->
+            <label for="imageNameHome" style="display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.95rem;">Nama Layanan/Judul:</label>
+            <input 
+              type="text" 
+              id="imageNameHome" 
+              placeholder="Contoh: Aromatherapy Massage" 
+              required
+              style="width: 100%; padding: 0.7rem; border: 2px solid #ddd; border-radius: 10px; font-size: 0.95rem; transition: all 0.3s ease;"
+            >
+          </div>
+          <button 
+            type="submit" 
+            style="background: var(--primary-color); color: white; padding: 0.7rem 1.5rem; border: none; border-radius: 10px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: var(--transition);"
+            onmouseover="this.style.background='#5a8a4a'" 
+            onmouseout="this.style.background='var(--primary-color)'"
+          >Pilih Gambar</button>
+        </form>
+        <input 
+          type="file" 
+          id="imageInputHome" 
+          accept="image/*" 
+          style="display: none;"
+        >
+        <div id="uploadMessageHome" style="padding: 0.8rem; border-radius: 10px; display: none; font-size: 0.9rem;"></div>
+      </div>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openGalleryModal('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 400%27%3E%3Cdefs%3E%3ClinearGradient id=%27g1%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:%236b9b5a;stop-opacity:1%27 /%3E%3Cstop offset=%27100%25%27 style=%27stop-color:%238fbc8f;stop-opacity:1%27 /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%27400%27 height=%27400%27 fill=%27url(%23g1)%27/%3E%3Ccircle cx=%2780%27 cy=%2780%27 r=%2760%27 fill=%27%23d4a574%27 opacity=%270.3%27/%3E%3Ctext x=%27200%27 y=%27200%27 font-size=%2732%27 font-weight=%27bold%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 opacity=%270.7%27%3EMassage%3C/text%3E%3C/svg%3E', 'Massage Premium')">
+          <img src="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 400%27%3E%3Cdefs%3E%3ClinearGradient id=%27g1%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:%236b9b5a;stop-opacity:1%27 /%3E%3Cstop offset=%27100%25%27 style=%27stop-color:%238fbc8f;stop-opacity:1%27 /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%27400%27 height=%27400%27 fill=%27url(%23g1)%27/%3E%3Ccircle cx=%2780%27 cy=%2780%27 r=%2760%27 fill=%27%23d4a574%27 opacity=%270.3%27/%3E%3Ctext x=%27200%27 y=%27200%27 font-size=%2732%27 font-weight=%27bold%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 opacity=%270.7%27%3EMassage%3C/text%3E%3C/svg%3E" alt="Massage Premium">
+          <div class="gallery-overlay">
+            <h3>Massage Premium</h3>
+            <p>Relaksasi otot yang mendalam</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openGalleryModal('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 400%27%3E%3Cdefs%3E%3ClinearGradient id=%27g2%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:%23d4a574;stop-opacity:1%27 /%3E%3Cstop offset=%27100%25%27 style=%27stop-color:%23c9a77f;stop-opacity:1%27 /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%27400%27 height=%27400%27 fill=%27url(%23g2)%27/%3E%3Ccircle cx=%27320%27 cy=%2780%27 r=%2770%27 fill=%27%236b9b5a%27 opacity=%270.2%27/%3E%3Ctext x=%27200%27 y=%27200%27 font-size=%2732%27 font-weight=%27bold%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 opacity=%270.7%27%3EFacial%3C/text%3E%3C/svg%3E', 'Facial Treatment')">
+          <img src="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 400%27%3E%3Cdefs%3E%3ClinearGradient id=%27g2%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:%23d4a574;stop-opacity:1%27 /%3E%3Cstop offset=%27100%25%27 style=%27stop-color:%23c9a77f;stop-opacity:1%27 /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%27400%27 height=%27400%27 fill=%27url(%23g2)%27/%3E%3Ccircle cx=%27320%27 cy=%2780%27 r=%2770%27 fill=%27%236b9b5a%27 opacity=%270.2%27/%3E%3Ctext x=%27200%27 y=%27200%27 font-size=%2732%27 font-weight=%27bold%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 opacity=%270.7%27%3EFacial%3C/text%3E%3C/svg%3E" alt="Facial Treatment">
+          <div class="gallery-overlay">
+            <h3>Facial Treatment</h3>
+            <p>Perawatan wajah premium</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openGalleryModal('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 400%27%3E%3Cdefs%3E%3ClinearGradient id=%27g3%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:%23a8d5ba;stop-opacity:1%27 /%3E%3Cstop offset=%27100%25%27 style=%27stop-color:%236b9b5a;stop-opacity:1%27 /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%27400%27 height=%27400%27 fill=%27url(%23g3)%27/%3E%3Ccircle cx=%27100%27 cy=%27320%27 r=%2765%27 fill=%27%23d4a574%27 opacity=%270.25%27/%3E%3Ctext x=%27200%27 y=%27200%27 font-size=%2732%27 font-weight=%27bold%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 opacity=%270.7%27%3EBody Spa%3C/text%3E%3C/svg%3E', 'Body Treatment')">
+          <img src="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 400%27%3E%3Cdefs%3E%3ClinearGradient id=%27g3%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:%23a8d5ba;stop-opacity:1%27 /%3E%3Cstop offset=%27100%25%27 style=%27stop-color:%236b9b5a;stop-opacity:1%27 /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%27400%27 height=%27400%27 fill=%27url(%23g3)%27/%3E%3Ccircle cx=%27100%27 cy=%27320%27 r=%2765%27 fill=%27%23d4a574%27 opacity=%270.25%27/%3E%3Ctext x=%27200%27 y=%27200%27 font-size=%2732%27 font-weight=%27bold%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 opacity=%270.7%27%3EBody Spa%3C/text%3E%3C/svg%3E" alt="Body Treatment">
+          <div class="gallery-overlay">
+            <h3>Body Treatment</h3>
+            <p>Perawatan tubuh menyeluruh</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openGalleryModal('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 400%27%3E%3Cdefs%3E%3ClinearGradient id=%27g4%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:%23ffd27a;stop-opacity:1%27 /%3E%3Cstop offset=%27100%25%27 style=%27stop-color:%23d4a574;stop-opacity:1%27 /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%27400%27 height=%27400%27 fill=%27url(%23g4)%27/%3E%3Ccircle cx=%27320%27 cy=%27320%27 r=%2775%27 fill=%27%236b9b5a%27 opacity=%270.15%27/%3E%3Ctext x=%27200%27 y=%27200%27 font-size=%2732%27 font-weight=%27bold%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 opacity=%270.7%27%3EAlami%3C/text%3E%3C/svg%3E', 'Sentuhan Alami')">
+          <img src="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 400%27%3E%3Cdefs%3E%3ClinearGradient id=%27g4%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:%23ffd27a;stop-opacity:1%27 /%3E%3Cstop offset=%27100%25%27 style=%27stop-color:%23d4a574;stop-opacity:1%27 /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%27400%27 height=%27400%27 fill=%27url(%23g4)%27/%3E%3Ccircle cx=%27320%27 cy=%27320%27 r=%2775%27 fill=%27%236b9b5a%27 opacity=%270.15%27/%3E%3Ctext x=%27200%27 y=%27200%27 font-size=%2732%27 font-weight=%27bold%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 opacity=%270.7%27%3EAlami%3C/text%3E%3C/svg%3E" alt="Sentuhan Alami">
+          <div class="gallery-overlay">
+            <h3>Sentuhan Alami</h3>
+            <p>Bahan-bahan organik terpilih</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openGalleryModal('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 400%27%3E%3Cdefs%3E%3ClinearGradient id=%27g5%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:%23d4a574;stop-opacity:1%27 /%3E%3Cstop offset=%27100%25%27 style=%27stop-color:%238fbc8f;stop-opacity:1%27 /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%27400%27 height=%27400%27 fill=%27url(%23g5)%27/%3E%3Ccircle cx=%2780%27 cy=%27320%27 r=%2770%27 fill=%27%236b9b5a%27 opacity=%270.2%27/%3E%3Ctext x=%27200%27 y=%27200%27 font-size=%2732%27 font-weight=%27bold%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 opacity=%270.7%27%3ESteam%3C/text%3E%3C/svg%3E', 'Steam Therapy')">
+          <img src="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 400%27%3E%3Cdefs%3E%3ClinearGradient id=%27g5%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:%23d4a574;stop-opacity:1%27 /%3E%3Cstop offset=%27100%25%27 style=%27stop-color:%238fbc8f;stop-opacity:1%27 /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%27400%27 height=%27400%27 fill=%27url(%23g5)%27/%3E%3Ccircle cx=%2780%27 cy=%27320%27 r=%2770%27 fill=%27%236b9b5a%27 opacity=%270.2%27/%3E%3Ctext x=%27200%27 y=%27200%27 font-size=%2732%27 font-weight=%27bold%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 opacity=%270.7%27%3ESteam%3C/text%3E%3C/svg%3E" alt="Steam Therapy">
+          <div class="gallery-overlay">
+            <h3>Steam Therapy</h3>
+            <p>Terapi uap untuk detox</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openGalleryModal('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 400%27%3E%3Cdefs%3E%3ClinearGradient id=%27g6%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:%238fbc8f;stop-opacity:1%27 /%3E%3Cstop offset=%27100%25%27 style=%27stop-color:%236b9b5a;stop-opacity:1%27 /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%27400%27 height=%27400%27 fill=%27url(%23g6)%27/%3E%3Ccircle cx=%27320%27 cy=%2780%27 r=%2760%27 fill=%27%23ffd27a%27 opacity=%270.2%27/%3E%3Ctext x=%27200%27 y=%27200%27 font-size=%2732%27 font-weight=%27bold%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 opacity=%270.7%27%3ENail Care%3C/text%3E%3C/svg%3E', 'Manicure & Pedicure')">
+          <img src="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 400%27%3E%3Cdefs%3E%3ClinearGradient id=%27g6%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:%238fbc8f;stop-opacity:1%27 /%3E%3Cstop offset=%27100%25%27 style=%27stop-color:%236b9b5a;stop-opacity:1%27 /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%27400%27 height=%27400%27 fill=%27url(%23g6)%27/%3E%3Ccircle cx=%27320%27 cy=%2780%27 r=%2760%27 fill=%27%23ffd27a%27 opacity=%270.2%27/%3E%3Ctext x=%27200%27 y=%27200%27 font-size=%2732%27 font-weight=%27bold%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 opacity=%270.7%27%3ENail Care%3C/text%3E%3C/svg%3E" alt="Manicure & Pedicure">
+          <div class="gallery-overlay">
+            <h3>Manicure & Pedicure</h3>
+            <p>Perawatan kuku profesional</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-view-more">
+        <a href="gallery.html">Lihat Selengkapnya →</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Service Details Modal -->
+  <div id="serviceModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <div id="serviceModalBody"></div>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div id="editModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3>Edit Konten</h3>
+      <textarea id="editInput" class="input-field" rows="5"></textarea>
+      <button id="saveEdit" class="btn-primary">Simpan</button>
+      <button id="cancelEdit" class="btn-secondary">Batal</button>
+    </div>
+  </div>
+
+  <!-- Gallery Modal -->
+  <div id="galleryModal" class="gallery-modal hidden">
+    <div class="gallery-modal-content">
+      <button class="gallery-close-btn" onclick="closeGalleryModal()">&times;</button>
+      <img id="galleryModalImage" class="gallery-modal-image" src="" alt="">
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 ArZa Spa. Semua hak dilindungi. | Sentuhan alami untuk hidup yang lebih baik</p>
+  </footer>
+
+  <script>
+// Inlined script.js - Spa Website JavaScript
+
+// ===== CAROUSEL DATA =====
+const carouselData = [
+  { title: "Rasakan sensasi terbaik bersama ArZa Spa" },
+  { title: "Massage Premium untuk Relaksasi Tubuh" },
+  { title: "Facial Eksklusif untuk Kecantikan Wajah" },
+  { title: "Body Treatment Menyeluruh dengan Bahan Alami" },
+  { title: "Sentuhan Alami untuk Hidup yang Lebih Baik" }
+];
+
+// ===== CAROUSEL MANAGEMENT =====
+let currentSlide = 0;
+let carouselInterval;
+
+class CarouselManager {
+  constructor() {
+    this.slides = document.querySelectorAll('.carousel-slide');
+    this.dots = document.querySelectorAll('.carousel-dot');
+    this.totalSlides = this.slides.length;
+    this.currentSlide = 0;
+    this.init();
+  }
+
+  init() {
+    this.setupEventListeners();
+    this.startAutoPlay();
+  }
+
+  setupEventListeners() {
+    // Next button
+    const nextBtn = document.getElementById('nextBtn');
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => this.nextSlide());
+    }
+
+    // Previous button
+    const prevBtn = document.getElementById('prevBtn');
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => this.prevSlide());
+    }
+
+    // Dot indicators
+    this.dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => this.goToSlide(index));
+    });
+
+    // Pause on hover
+    const carouselContainer = document.querySelector('.carousel-container');
+    if (carouselContainer) {
+      carouselContainer.addEventListener('mouseenter', () => this.stopAutoPlay());
+      carouselContainer.addEventListener('mouseleave', () => this.startAutoPlay());
+    }
+  }
+
+  showSlide(n) {
+    if (n >= this.totalSlides) {
+      this.currentSlide = 0;
+    } else if (n < 0) {
+      this.currentSlide = this.totalSlides - 1;
+    } else {
+      this.currentSlide = n;
+    }
+
+    // Update slides
+    this.slides.forEach(slide => slide.classList.remove('active'));
+    this.slides[this.currentSlide].classList.add('active');
+
+    // Update dots
+    this.dots.forEach(dot => dot.classList.remove('active'));
+    this.dots[this.currentSlide].classList.add('active');
+
+    // Update counter
+    const currentSlideEl = document.getElementById('currentSlide');
+    if (currentSlideEl) {
+      currentSlideEl.textContent = this.currentSlide + 1;
+    }
+
+    // Update title
+    const titleEl = document.getElementById('carouselTitle');
+    if (titleEl && carouselData[this.currentSlide]) {
+      titleEl.textContent = carouselData[this.currentSlide].title;
+    }
+  }
+
+  nextSlide() {
+    this.showSlide(this.currentSlide + 1);
+    this.resetAutoPlay();
+  }
+
+  prevSlide() {
+    this.showSlide(this.currentSlide - 1);
+    this.resetAutoPlay();
+  }
+
+  goToSlide(n) {
+    this.showSlide(n);
+    this.resetAutoPlay();
+  }
+
+  startAutoPlay() {
+    carouselInterval = setInterval(() => {
+      this.showSlide(this.currentSlide + 1);
+    }, 5000); // Change slide every 5 seconds
+  }
+
+  stopAutoPlay() {
+    clearInterval(carouselInterval);
+  }
+
+  resetAutoPlay() {
+    this.stopAutoPlay();
+    this.startAutoPlay();
+  }
+}
+
+// ===== LOCAL STORAGE DATA =====
+const DEFAULT_DATA = {
+  services: {
+    massage: { 
+      name: "Pijat/Massage", 
+      price: 150000, 
+      desc: "Relaksasi otot yang mendalam dengan teknik profesional. Terapis berpengalaman kami menggunakan teknik tradisional dan modern untuk meredakan ketegangan otot dan meningkatkan sirkulasi darah. Durasi 60 menit dengan produk minyak premium alami." 
+    },
+    "body-treatment": { 
+      name: "Body Treatment", 
+      price: 200000, 
+      desc: "Perawatan tubuh menyeluruh dengan produk alami premium. Kombinasi scrub, massage, dan treatment kulit tubuh untuk hasil maksimal. Kulit menjadi lebih halus, cerah, dan sehat. Durasi 90 menit dengan hasil yang memuaskan." 
+    },
+    facial: { 
+      name: "Facial", 
+      price: 180000, 
+      desc: "Perawatan wajah premium untuk kulit yang cerah dan sehat. Treatment wajah lengkap dengan pembersihan, eksfoliasi, masker, dan perawatan khusus sesuai jenis kulit. Menggunakan produk organik dan aman untuk semua jenis kulit. Durasi 60 menit." 
+    },
+    steam: { 
+      name: "Terapi Uap/Sauna", 
+      price: 100000, 
+      desc: "Terapi uap untuk detox dan relaksasi total. Steam therapy membantu membuka pori-pori kulit, mengeluarkan racun dari tubuh, dan merelaksasi otot. Ideal untuk pemulihan kesehatan dan meningkatkan imunitas. Durasi 45 menit." 
+    },
+    "manicure-pedicure": { 
+      name: "Manicure & Pedicure", 
+      price: 120000, 
+      desc: "Perawatan kuku profesional dengan finishing sempurna. Perawatan lengkap kuku tangan dan kaki termasuk file, buffing, massage, dan finishing dengan cat berkualitas. Membuat kuku terlihat indah dan terawat. Durasi 60 menit untuk kedua tangan dan kaki." 
+    },
+    "relaxation-package": { 
+      name: "Paket Relaksasi", 
+      price: 450000, 
+      desc: "Kombinasi semua layanan dengan harga spesial. Paket hemat yang menggabungkan massage, body treatment, facial, dan steam therapy dalam satu sesi. Diskon khusus untuk paket lengkap ini. Durasi 3 jam dengan hasil relaksasi maksimal." 
+    },
+    "special-treatment": { 
+      name: "Special Treatment", 
+      price: 300000, 
+      desc: "Perawatan eksklusif dan premium untuk hasil maksimal. Treatment khusus dengan menggunakan produk impor premium dan teknik terbaru. Terapis senior kami akan memberikan perhatian khusus untuk kebutuhan spesifik Anda. Durasi 2 jam dengan hasil luar biasa." 
+    }
+  },
+  content: {
+    welcomeText1: "Nikmati pengalaman spa terbaik dengan produk alami pilihan. Kami menawar
